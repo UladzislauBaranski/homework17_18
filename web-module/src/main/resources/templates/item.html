@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>unique_number</td>
+        <td>description</td>
+    </tr>
+    </thead>
+    <tbody th:each="item:${items}">
+    <tr>
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.uniqueNumber}"></td>
+        <td th:text="${item.description}"></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/item/add">Add</a>
+</body>
+</html>

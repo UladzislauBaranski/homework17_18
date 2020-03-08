@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add item</title>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+<form action="/item/add" th:action="@{/item/add}" th:object="${item}" method="post">
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br>
+    Description: <input th:field="*{description}" name="description" type="text" maxlength="100">
+    <input type="submit" value="add">
+</form>
+</body>
+</html>
+
